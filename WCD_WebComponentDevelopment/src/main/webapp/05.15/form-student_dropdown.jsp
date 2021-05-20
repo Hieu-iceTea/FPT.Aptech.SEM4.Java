@@ -14,7 +14,7 @@
 <jsp:include page="../components/menu.jsp"/>
 
 
-<form action="form-student-response.jsp">
+<form action="05.15/form-student-response.jsp">
     <label>First name:</label>
     <input type="text" name="firstname">
     <br>

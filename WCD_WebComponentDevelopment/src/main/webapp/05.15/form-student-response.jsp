@@ -27,8 +27,10 @@
         <%
             String[] programming_languages = request.getParameterValues("programming_languages[]");
 
-            for (String programming_language : programming_languages) {
-                out.print("<li>" + programming_language + "</li>");
+            if (programming_languages != null) {
+                for (String programming_language : programming_languages) {
+                    out.print("<li>" + programming_language + "</li>");
+                }
             }
         %>
     </ul>
