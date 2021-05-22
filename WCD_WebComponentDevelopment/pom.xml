@@ -17,6 +17,13 @@
     </properties>
 
     <dependencies>
+        <!--<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>-->
+
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -35,7 +42,48 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JSTL (JSP Standard Tag Library) -->
+        <!-- https://downloads.apache.org/tomcat/taglibs/taglibs-standard-1.2.5/README_bin.txt -->
+        <!-- https://tomcat.apache.org/taglibs.html -->
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-spec</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
+        <!-- https://www.youtube.com/watch?v=Ka9lKLtlcZs -->
+        <!--<dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>2.0.0</version>
+        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <!-- END - JSTL (JSP Standard Tag Library) -->
     </dependencies>
+
+    <!-- Một khai báo duy nhất thay cho toàn bộ dependency cần thiết: -->
+    <!--<dependencies>
+        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api &ndash;&gt;
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>9.1.0-RC1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>-->
 
     <build>
         <plugins>
