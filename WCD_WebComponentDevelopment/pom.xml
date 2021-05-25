@@ -46,7 +46,7 @@
         <!-- JSTL (JSP Standard Tag Library) -->
         <!-- https://downloads.apache.org/tomcat/taglibs/taglibs-standard-1.2.5/README_bin.txt -->
         <!-- https://tomcat.apache.org/taglibs.html -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.taglibs</groupId>
             <artifactId>taglibs-standard-spec</artifactId>
             <version>1.2.5</version>
@@ -55,22 +55,22 @@
             <groupId>org.apache.taglibs</groupId>
             <artifactId>taglibs-standard-impl</artifactId>
             <version>1.2.5</version>
-        </dependency>
+        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
         <!-- https://www.youtube.com/watch?v=Ka9lKLtlcZs -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>2.0.0</version>
-        </dependency>-->
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-        <dependency>
+        <!--<dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>2.0.0</version>
-        </dependency>
+        </dependency>-->
         <!-- END - JSTL (JSP Standard Tag Library) -->
     </dependencies>
 
