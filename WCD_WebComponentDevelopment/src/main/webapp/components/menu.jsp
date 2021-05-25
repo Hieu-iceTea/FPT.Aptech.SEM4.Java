@@ -28,5 +28,9 @@ Start:
 <a href="05_22/JSTL_c_forEach.jsp">JSTL_c_forEach</a>
 <br>
 
+22/05:
+<a href="05_25/JSTL_Customer.jsp">JSTL_Customer</a>
+<br>
+
 <hr/>
 <br>
