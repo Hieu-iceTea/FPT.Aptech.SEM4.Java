@@ -14,7 +14,17 @@
 
 <jsp:include page="../../components/menu.jsp"/>
 
-<jsp:useBean id="myTask" scope="request" type="com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask"/>
+<%--<jsp:useBean id="myTask"
+             scope="request"
+             class="com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask"
+             type="com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask"
+             beanName="com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask"
+/>--%>
+
+<jsp:useBean id="myTask"
+             scope="request"
+             type="com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask"
+/>
 
 <h2>Task list | Show</h2>
 <p>
