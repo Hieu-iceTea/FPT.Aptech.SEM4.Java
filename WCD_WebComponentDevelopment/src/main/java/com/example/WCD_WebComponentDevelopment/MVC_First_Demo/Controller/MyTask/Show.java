@@ -15,7 +15,8 @@ public class Show extends HttpServlet {
         MyTask myTask = MyTaskService.find(request, Integer.parseInt(request.getParameter("id")));
 
         if (myTask == null) {
-            response.getWriter().println("The record does not exist or deleted. 😥 🤨 😴 ☹ 😱");
+            response.setContentType("text/html");
+            response.getWriter().println("Hieu_iceTea said: [404] The record does not exist or deleted. 😱 😥 ☹ 🤨 😴");
             return;
         }
 

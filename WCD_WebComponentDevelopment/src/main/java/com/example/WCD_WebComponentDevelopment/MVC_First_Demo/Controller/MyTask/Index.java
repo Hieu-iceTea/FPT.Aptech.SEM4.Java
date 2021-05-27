@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/task", "/task/index", "/task/index/"})
+@WebServlet(urlPatterns = {"/task", "/task/", "/task/index", "/task/index/"})
 public class Index extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,7 +18,7 @@ public class Index extends HttpServlet {
         request.setAttribute("myTasks", myTasks);
 
         //response.sendRedirect("MVC_First_Demo/MyTask/index.jsp");
-        request.getRequestDispatcher("MVC_First_Demo/MyTask/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/MVC_First_Demo/MyTask/index.jsp").forward(request, response);
     }
 
     @Override
