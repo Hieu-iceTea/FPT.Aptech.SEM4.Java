@@ -12,6 +12,8 @@
 
 <jsp:include page="components/menu.jsp"/>
 
+<%--<%@ include file="components/menu.jsp"%>--%>
+
 <p>
     The time on the server is: <%= new Date() %>
 </p>
