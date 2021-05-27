@@ -1,7 +1,7 @@
 package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Controller.MyTask;
 
 import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask;
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskContext;
+import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -23,7 +23,7 @@ public class Index extends HttpServlet {
 
         request.getSession().setAttribute("myTasks", myTasks);*/
 
-        List<MyTask> myTasks = MyTaskContext.getMyTasks(request);
+        List<MyTask> myTasks = MyTaskService.all(request);
 
         request.setAttribute("myTasks", myTasks);
 

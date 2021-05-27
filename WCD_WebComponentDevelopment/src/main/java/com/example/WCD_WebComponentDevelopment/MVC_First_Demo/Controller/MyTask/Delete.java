@@ -1,6 +1,6 @@
 package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Controller.MyTask;
 
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskContext;
+import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Delete extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MyTaskContext.deleteMyTask(request, Integer.parseInt(request.getParameter("id")));
+        MyTaskService.delete(request, Integer.parseInt(request.getParameter("id")));
 
         response.sendRedirect(request.getContextPath() + "/task");
     }

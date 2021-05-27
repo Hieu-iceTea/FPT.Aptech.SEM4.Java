@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MyTaskContext {
+public class MyTaskService {
     private static List<MyTask> initialization() {
         List<MyTask> myTasks = new ArrayList<>();
 
@@ -21,7 +21,7 @@ public class MyTaskContext {
         return myTasks;
     }
 
-    public static List<MyTask> getMyTasks(HttpServletRequest request) {
+    public static List<MyTask> all(HttpServletRequest request) {
         List<MyTask> myTasksFromSession = (List<MyTask>) request.getSession().getAttribute("myTasks");
 
         if (myTasksFromSession == null) {
@@ -36,8 +36,8 @@ public class MyTaskContext {
         return myTasksFromSession.stream().filter(item -> !item.getDeleted()).collect(Collectors.toList());
     }
 
-    public static MyTask getMyTask(HttpServletRequest request, int id) {
-        List<MyTask> myTasksFromSession = getMyTasks(request);
+    public static MyTask find(HttpServletRequest request, int id) {
+        List<MyTask> myTasksFromSession = all(request);
 
         MyTask myTask = myTasksFromSession.stream()
                 .filter(item -> item.getId() == id)
@@ -48,7 +48,7 @@ public class MyTaskContext {
         return myTask;
     }
 
-    public static void addMyTask(MyTask myTask, HttpServletRequest request) {
+    public static void create(HttpServletRequest request, MyTask myTask) {
         List<MyTask> myTasksFromSession = (List<MyTask>) request.getSession().getAttribute("myTasks");
 
         if (myTask.getId() == 0) {
@@ -64,10 +64,10 @@ public class MyTaskContext {
         myTasksFromSession.add(myTask);
     }
 
-    public static void updateMyTask(HttpServletRequest request, int id, MyTask myTask) {
-        List<MyTask> myTasksFromSession = getMyTasks(request);
+    public static void update(HttpServletRequest request, int id, MyTask myTask) {
+        List<MyTask> myTasksFromSession = all(request);
 
-        MyTask MyTask_Old = getMyTask(request, id);
+        MyTask MyTask_Old = find(request, id);
         int index = myTasksFromSession.indexOf(MyTask_Old);
 
         myTask.setVersion(MyTask_Old.getVersion() + 1);
@@ -77,11 +77,11 @@ public class MyTaskContext {
         myTasksFromSession.set(index, myTask);
     }
 
-    public static void deleteMyTask(HttpServletRequest request, int id) {
-        MyTask myTask = getMyTask(request, id);
+    public static void delete(HttpServletRequest request, int id) {
+        MyTask myTask = find(request, id);
 
         //Xóa cứng:
-        List<MyTask> myTasksFromSession = getMyTasks(request);
+        List<MyTask> myTasksFromSession = all(request);
         //myTasksFromSession.remove(searchMyTask);
 
         //Xóa mềm:

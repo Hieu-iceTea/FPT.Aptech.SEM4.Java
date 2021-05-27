@@ -2,7 +2,7 @@ package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Controller.MyTask
 
 import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask;
 import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.Status;
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskContext;
+import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -31,7 +31,7 @@ public class Create extends HttpServlet {
         myTask.setStatus(Status.valueOf(request.getParameter("status")));
         myTask.setNote(request.getParameter("note"));
 
-        MyTaskContext.addMyTask(myTask, request);
+        MyTaskService.create(request, myTask);
 
         response.sendRedirect(request.getContextPath() + "/task/show/?id=" + myTask.getId());
     }

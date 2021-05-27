@@ -2,7 +2,7 @@ package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Controller.MyTask
 
 import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.MyTask;
 import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.Status;
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskContext;
+import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service.MyTaskService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class Edit extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MyTask myTask = MyTaskContext.getMyTask(request, Integer.parseInt(request.getParameter("id")));
+        MyTask myTask = MyTaskService.find(request, Integer.parseInt(request.getParameter("id")));
 
         if (myTask == null) {
             response.getWriter().println("The record does not exist or deleted. 😥 🤨 😴 ☹ 😱");
@@ -28,7 +28,7 @@ public class Edit extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MyTask myTask = MyTaskContext.getMyTask(request, Integer.parseInt(request.getParameter("id")));
+        MyTask myTask = MyTaskService.find(request, Integer.parseInt(request.getParameter("id")));
 
         myTask.setTitle(request.getParameter("title"));
         myTask.setContent(request.getParameter("content"));
@@ -40,7 +40,7 @@ public class Edit extends HttpServlet {
         myTask.setStatus(Status.valueOf(request.getParameter("status")));
         myTask.setNote(request.getParameter("note"));
 
-        MyTaskContext.updateMyTask(request, Integer.parseInt(request.getParameter("id")), myTask);
+        MyTaskService.update(request, Integer.parseInt(request.getParameter("id")), myTask);
 
         response.sendRedirect(request.getContextPath() + "/task/show/?id=" + myTask.getId());
     }

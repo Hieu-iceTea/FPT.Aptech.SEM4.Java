@@ -39,7 +39,7 @@ public class ContextWithSessionName {
         return BaseModel;
     }
 
-    public static void create(BaseModel BaseModel, HttpServletRequest request, String sessionName) {
+    public static void create(HttpServletRequest request,String sessionName, BaseModel BaseModel ) {
         List<BaseModel> ItemsFromSession = (List<BaseModel>) request.getSession().getAttribute(sessionName);
 
         if (BaseModel.getId() == 0) {
@@ -55,7 +55,7 @@ public class ContextWithSessionName {
         ItemsFromSession.add(BaseModel);
     }
 
-    public static void update(HttpServletRequest request, int id, BaseModel BaseModel, String sessionName) {
+    public static void update(HttpServletRequest request, String sessionName, int id, BaseModel BaseModel) {
         List<BaseModel> ItemsFromSession = all(request, sessionName);
 
         BaseModel BaseModel_Old = find(request, sessionName, id);
