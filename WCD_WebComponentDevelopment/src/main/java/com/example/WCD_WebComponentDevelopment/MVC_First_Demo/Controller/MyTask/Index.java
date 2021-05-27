@@ -13,16 +13,6 @@ import java.util.List;
 public class Index extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*List<MyTask> myTasks = (List<MyTask>) request.getSession().getAttribute("myTasks");
-
-        if (myTasks == null) {
-            myTasks = new ArrayList<>();
-        }
-
-        myTasks.add(new MyTask(3, "Code", "Code thật siêu"));
-
-        request.getSession().setAttribute("myTasks", myTasks);*/
-
         List<MyTask> myTasks = MyTaskService.all(request);
 
         request.setAttribute("myTasks", myTasks);
