@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MyTaskService {
+    private static final String SessionName = "myTasks";
+
     private static List<MyTask> initialization() {
         List<MyTask> myTasks = new ArrayList<>();
 
@@ -22,7 +24,7 @@ public class MyTaskService {
     }
 
     public static List<MyTask> all(HttpServletRequest request) {
-        List<MyTask> myTasksFromSession = (List<MyTask>) request.getSession().getAttribute("myTasks");
+        List<MyTask> myTasksFromSession = (List<MyTask>) request.getSession().getAttribute(SessionName);
 
         if (myTasksFromSession == null) {
             myTasksFromSession = initialization();
@@ -49,7 +51,7 @@ public class MyTaskService {
     }
 
     public static void create(HttpServletRequest request, MyTask myTask) {
-        List<MyTask> myTasksFromSession = (List<MyTask>) request.getSession().getAttribute("myTasks");
+        List<MyTask> myTasksFromSession = (List<MyTask>) request.getSession().getAttribute(SessionName);
 
         if (myTask.getId() == 0) {
             if (myTasksFromSession.size() == 0) {
