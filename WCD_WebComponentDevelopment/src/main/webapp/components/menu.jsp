@@ -2,6 +2,26 @@
 
 <base href="<c:url value="/"/>">
 
+<c:if test="${sessionScope.isLoggedIn}">
+    <div>
+        <span>Welcome, <b style="background-color: greenyellow; padding: 5px; border-radius: 10%">${sessionScope.user.username}</b></span>
+
+        <form style="display: inline" action="logout" method="post">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+</c:if>
+
+<c:if test="${!sessionScope.isLoggedIn}">
+    <div>
+        <a style="background-color: greenyellow; padding: 5px; border-radius: 10%" href="login">Login</a>
+    </div>
+</c:if>
+
+<hr>
+
+<br>
+
 Default:
 <a href="index.jsp">Home</a> |
 <a href="hello-servlet">Hello Servlet</a>

@@ -32,6 +32,13 @@ public class User extends BaseModel {
         Username = username;
     }
 
+    public User(int id, String username, String password) {
+        super(id);
+
+        Username = username;
+        Password = password;
+    }
+
     public String getUsername() {
         return Username;
     }
