@@ -18,6 +18,8 @@ public class Logout extends HttpServlet {
         request.getSession().removeAttribute("isLoggedIn");
         request.getSession().removeAttribute("user");
 
+        request.getSession().setAttribute("notification", "You have logged out successfully from the system.");
+
         response.sendRedirect(request.getContextPath() + "/login");
     }
 }

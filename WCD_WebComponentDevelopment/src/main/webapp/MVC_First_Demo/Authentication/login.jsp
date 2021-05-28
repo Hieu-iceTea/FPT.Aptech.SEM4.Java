@@ -21,6 +21,7 @@
 <h2>Login</h2>
 
 <jsp:include page="/components/errorMessage.jsp"/>
+<jsp:include page="/components/notification.jsp"/>
 
 <form action="login" method="post">
     <label for="username">Username:</label><br>
