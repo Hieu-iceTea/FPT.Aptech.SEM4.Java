@@ -1,4 +1,6 @@
-<base href="/WCD/">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<base href="<c:url value="/"/>">
 
 Default:
 <a href="index.jsp">Home</a> |
