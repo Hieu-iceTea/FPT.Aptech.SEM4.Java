@@ -21,6 +21,7 @@ public class TestConnectionDatabase extends HttpServlet {
         PrintWriter out = response.getWriter();
         Connection connection = (Connection) request.getServletContext().getAttribute("dbConnection");
         try {
+            out.println("List of users from databases:\n");
             PreparedStatement statement = connection.prepareStatement("select * from wcd_webcomponentdevelopment.user ORDER BY id DESC");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet != null && resultSet.next()) {
