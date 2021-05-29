@@ -7,7 +7,7 @@ public class User extends BaseModel {
     private String Firstname;
     private String Lastname;
 
-    private String Gender;
+    private Boolean Gender;
     private String Email;
     private String Phone;
     private String Address;
@@ -71,11 +71,11 @@ public class User extends BaseModel {
         Lastname = lastname;
     }
 
-    public String getGender() {
+    public Boolean getGender() {
         return Gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Boolean gender) {
         Gender = gender;
     }
 

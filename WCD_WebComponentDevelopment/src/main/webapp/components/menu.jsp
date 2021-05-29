@@ -57,5 +57,8 @@ Start:
 MVC_First_Demo:
 <a href="task">Task</a>
 
+First_TestConnectionDatabase:
+<a href="test-connection-database">TestConnectionDatabase</a>
+
 <hr/>
 <br>
