@@ -23,10 +23,10 @@ public class TestConnectionDatabase extends HttpServlet {
         try {
             PreparedStatement statement = connection.prepareStatement("select * from wcd_webcomponentdevelopment.user ORDER BY id DESC");
             ResultSet resultSet = statement.executeQuery();
-            while(resultSet != null && resultSet.next()){
+            while (resultSet != null && resultSet.next()) {
                 out.println(
-                        resultSet.getString("username") +": "
-                                + resultSet.getString("firstname") +", "
+                        resultSet.getString("username") + ": "
+                                + resultSet.getString("firstname") + ", "
                                 + resultSet.getString("lastname")
                 );
             }

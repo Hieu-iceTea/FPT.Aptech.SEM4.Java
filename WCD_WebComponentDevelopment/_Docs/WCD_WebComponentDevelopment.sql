@@ -60,15 +60,21 @@ CREATE TABLE IF NOT EXISTS `user`
 # Default password: 123456
 
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
-VALUE (12, 'ThiDK', 'ThiDK@fpt.edu.vn ', '123456', 4, 'ThiDK.jpg', 2, 'Đặng Kim', 'Thi', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+VALUE (15, 'ThiDK', 'ThiDK@fpt.edu.vn ', '123456', 4, 'ThiDK.jpg', 2, 'Đặng Kim', 'Thi', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
-VALUE (11, 'Hieu_iceTea', 'HieuNDTH1908028@fpt.edu.vn', '123456', 4, 'DinhHieu8896.jpg', 1, 'Nguyễn Đình', 'Hiếu', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+VALUE (14, 'Hieu_iceTea', 'DinhHieu8896@gmail.com', '123456', 4, 'Hieu_iceTea.jpg', 1, 'Nguyễn Đình', 'Hiếu', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
-VALUE (10, 'HungNPMTH1908050', 'HungNPMTH1908050@fpt.edu.vn', '123456', 4, 'HungNPMTH1908050.jpg', 1, 'Nông Phan Mạnh', 'Hùng', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+VALUE (13, 'DinhHieu8896', 'HieuNDTH1908028@fpt.edu.vn', '123456', 4, 'DinhHieu8896.jpg', 1, 'Nguyễn Đình', 'Hiếu', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
-VALUE (9, 'HuyVQTH1909003', 'HuyVQTH1909003@fpt.edu.vn', '123456', 4, 'HuyVQTH1909003.jpg', 1, 'Vũ Quang', 'Huy', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+VALUE (12, 'HungNPMTH1908050', 'HungNPMTH1908050@fpt.edu.vn', '123456', 4, 'HungNPMTH1908050.jpg', 1, 'Nông Phan Mạnh', 'Hùng', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
-VALUE (8, 'AnhNTTH1908059', 'AnhNTTH1908059@fpt.edu.vn', '123456', 4, 'AnhNTTH1908059.jpg', 1, 'Nguyễn Trung', 'Anh', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+VALUE (11, 'HuyVQTH1909003', 'HuyVQTH1909003@fpt.edu.vn', '123456', 4, 'HuyVQTH1909003.jpg', 1, 'Vũ Quang', 'Huy', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
+VALUE (10, 'AnhNTTH1908059', 'AnhNTTH1908059@fpt.edu.vn', '123456', 4, 'AnhNTTH1908059.jpg', 1, 'Nguyễn Trung', 'Anh', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
+VALUE (9, 'HoaDTCTH1909001', 'HoaDTCTH1909001@fpt.edu.vn', '123456', 4, 'HoaDTCTH1909001.jpg', 1, 'Đỗ Thị Chan', 'Hòa', '098 115 9826', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
+INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
+VALUE (8, 'VuHVTH1908054', 'VuHVTH1908054@fpt.edu.vn', '123456', 4, 'VuHVTH1908054.jpg', 1, 'Hà Văn', 'Vũ', '082 589 4329', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
 VALUE (7, 'Customer', 'codedy.demo@gmail.com', '123456', 4, 'customer.jpg', 1, 'CODEDY', 'Customer', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE);
 INSERT INTO user (id, username, email, password, level, image, gender, firstname, lastname, phone, address, active)
