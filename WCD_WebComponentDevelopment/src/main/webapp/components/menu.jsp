@@ -63,7 +63,8 @@ First_TestConnectionDatabase:
 <br>
 
 JDBC_MySQL:
-<a href="JDBC_MySQL/test.jsp">TestConnectionDatabase</a>
+<a href="05_25_JDBC_MySQL/test.jsp">test.jsp</a> |
+<a href="JDBC_MySQL/test-servlet">test-servlet</a>
 
 <hr/>
 <br>
