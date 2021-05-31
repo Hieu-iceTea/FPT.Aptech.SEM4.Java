@@ -1,20 +1,20 @@
 package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class BaseModel {
     private int Id;
 
-    private LocalDateTime CreatedAt;
+    private Date CreatedAt;
     private String CreatedBy;
-    private LocalDateTime UpdatedAt;
+    private Date UpdatedAt;
     private String UpdatedBy;
 
     private int Version;
     private Boolean Deleted;
 
     private void initializeSystemValue() {
-        CreatedAt = LocalDateTime.now();
+        CreatedAt = new Date();
         CreatedBy = "Hieu_iceTea";
         Version = 1;
         Deleted = false;
@@ -38,11 +38,11 @@ public class BaseModel {
         Id = id;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return CreatedAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         CreatedAt = createdAt;
     }
 
@@ -54,11 +54,11 @@ public class BaseModel {
         CreatedBy = createdBy;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Date getUpdatedAt() {
         return UpdatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         UpdatedAt = updatedAt;
     }
 

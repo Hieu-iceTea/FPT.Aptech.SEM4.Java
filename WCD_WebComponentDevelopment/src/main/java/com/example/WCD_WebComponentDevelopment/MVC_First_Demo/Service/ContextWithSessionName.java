@@ -1,13 +1,9 @@
 package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Service;
 
 import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.BaseModel;
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.BaseModel;
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.Status;
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.User;
 import jakarta.servlet.http.HttpServletRequest;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -62,7 +58,7 @@ public class ContextWithSessionName {
         int index = ItemsFromSession.indexOf(BaseModel_Old);
 
         BaseModel.setVersion(BaseModel_Old.getVersion() + 1);
-        BaseModel.setUpdatedAt(LocalDateTime.now());
+        BaseModel.setUpdatedAt(new Date());
         BaseModel.setUpdatedBy("Anonymous");
 
         ItemsFromSession.set(index, BaseModel);

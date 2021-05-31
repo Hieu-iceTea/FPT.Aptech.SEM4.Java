@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,7 +74,7 @@ public class MyTaskService {
         int index = myTasksFromSession.indexOf(MyTask_Old);
 
         myTask.setVersion(MyTask_Old.getVersion() + 1);
-        myTask.setUpdatedAt(LocalDateTime.now());
+        myTask.setUpdatedAt(new Date());
         myTask.setUpdatedBy("Anonymous");
 
         myTasksFromSession.set(index, myTask);

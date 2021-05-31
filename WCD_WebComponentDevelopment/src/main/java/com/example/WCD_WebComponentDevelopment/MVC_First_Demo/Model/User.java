@@ -1,5 +1,10 @@
 package com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model;
 
+import MyUtilities.Utility;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class User extends BaseModel {
     private String Username;
     private String Password;
@@ -13,6 +18,8 @@ public class User extends BaseModel {
     private String Address;
 
     private String Level;
+    private String Image;
+
     private Boolean Active;
 
     public User() {
@@ -117,5 +124,37 @@ public class User extends BaseModel {
 
     public void setActive(Boolean active) {
         Active = active;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %s, %s",
+                getId(), Username, Email);
+    }
+
+    public static List<User> all() {
+        List<?> result = Utility.executeQuery("select * from user", User.class.getName());
+        if (result.size() == 0) {
+            return null;
+        }
+
+        return (List<User>) result;
+    }
+
+    public static User find(int id) {
+        List<?> result = Utility.executeQuery("select * from user where id = " + id, User.class.getName());
+        if (result.size() == 0) {
+            return null;
+        }
+
+        return (User) result.get(0);
     }
 }
