@@ -11,8 +11,8 @@
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<sql:query var="rs" dataSource="jdbc/TestDB">
-    select * from testdata
+<sql:query var="resultSet" dataSource="jdbc/mysql/DatabaseName_Test">
+    select * from TableName_Test
 </sql:query>
 
 <html>
@@ -23,9 +23,10 @@
 
 <h2>Results</h2>
 
-<c:forEach var="row" items="${rs.rows}">
+<c:forEach var="row" items="${resultSet.rows}">
     Foo: ${row.foo} <br>
     Bar: ${row.bar} <br>
+    <br>
 </c:forEach>
 
 </body>
