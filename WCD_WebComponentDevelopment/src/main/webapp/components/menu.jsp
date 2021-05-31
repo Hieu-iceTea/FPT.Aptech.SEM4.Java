@@ -60,6 +60,10 @@ MVC_First_Demo:
 
 First_TestConnectionDatabase:
 <a href="test-connection-database">TestConnectionDatabase</a>
+<br>
+
+JDBC_MySQL:
+<a href="JDBC_MySQL/test.jsp">TestConnectionDatabase</a>
 
 <hr/>
 <br>
