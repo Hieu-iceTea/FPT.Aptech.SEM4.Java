@@ -1,7 +1,7 @@
 package com.example.WCD_WebComponentDevelopment.MVC_Demo.Controller.Authentication;
 
 import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.User;
-import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.UserService;
+import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.UserServiceSession;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -21,7 +21,7 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
         String urlContinue = request.getParameter("urlContinue");
 
-        User user = UserService.check(request, username, password);
+        User user = UserServiceSession.check(request, username, password);
 
         if (user != null) {
             request.getSession().setAttribute("isLoggedIn", true);

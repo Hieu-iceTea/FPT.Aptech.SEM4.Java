@@ -2,7 +2,7 @@ package com.example.WCD_WebComponentDevelopment.MVC_Demo.Controller.MyTask;
 
 import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.MyTask;
 import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.Status;
-import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.MyTaskService;
+import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.MyTaskServiceSession;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class Edit extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MyTask myTask = MyTaskService.find(request, Integer.parseInt(request.getParameter("id")));
+        MyTask myTask = MyTaskServiceSession.find(request, Integer.parseInt(request.getParameter("id")));
 
         if (myTask == null) {
             response.setContentType("text/html");
@@ -29,7 +29,7 @@ public class Edit extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MyTask myTask = MyTaskService.find(request, Integer.parseInt(request.getParameter("id")));
+        MyTask myTask = MyTaskServiceSession.find(request, Integer.parseInt(request.getParameter("id")));
 
         myTask.setTitle(request.getParameter("title"));
         myTask.setContent(request.getParameter("content"));
@@ -41,7 +41,7 @@ public class Edit extends HttpServlet {
         myTask.setStatus(Status.valueOf(request.getParameter("status")));
         myTask.setNote(request.getParameter("note"));
 
-        MyTaskService.update(request, Integer.parseInt(request.getParameter("id")), myTask);
+        MyTaskServiceSession.update(request, Integer.parseInt(request.getParameter("id")), myTask);
 
         response.sendRedirect(request.getContextPath() + "/task/show/?id=" + myTask.getId());
     }

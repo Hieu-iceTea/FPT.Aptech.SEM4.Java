@@ -1,7 +1,7 @@
 package com.example.WCD_WebComponentDevelopment.MVC_Demo.Controller.MyTask;
 
 import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.MyTask;
-import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.MyTaskService;
+import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.MyTaskServiceSession;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Show extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MyTask myTask = MyTaskService.find(request, Integer.parseInt(request.getParameter("id")));
+        MyTask myTask = MyTaskServiceSession.find(request, Integer.parseInt(request.getParameter("id")));
 
         if (myTask == null) {
             response.setContentType("text/html");

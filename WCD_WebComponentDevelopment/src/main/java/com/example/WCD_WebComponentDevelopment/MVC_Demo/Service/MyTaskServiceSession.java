@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MyTaskService {
+public class MyTaskServiceSession {
     private static final String SessionName = "myTasks";
 
     private static List<MyTask> initialization() {

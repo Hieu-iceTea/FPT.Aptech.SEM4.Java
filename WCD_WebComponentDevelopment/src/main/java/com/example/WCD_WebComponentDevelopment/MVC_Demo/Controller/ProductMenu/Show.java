@@ -1,8 +1,6 @@
 package com.example.WCD_WebComponentDevelopment.MVC_Demo.Controller.ProductMenu;
 
-import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.MyTask;
 import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.Product;
-import com.example.WCD_WebComponentDevelopment.MVC_Demo.Service.MyTaskService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

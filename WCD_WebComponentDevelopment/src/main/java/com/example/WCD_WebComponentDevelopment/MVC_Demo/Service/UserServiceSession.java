@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserService {
+public class UserServiceSession {
     private static final String SessionName = "users";
 
     private static List<User> initialization() {
