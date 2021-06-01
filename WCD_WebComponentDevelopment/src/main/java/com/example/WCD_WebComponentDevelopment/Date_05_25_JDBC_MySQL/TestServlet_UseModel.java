@@ -1,6 +1,6 @@
 package com.example.WCD_WebComponentDevelopment.Date_05_25_JDBC_MySQL;
 
-import com.example.WCD_WebComponentDevelopment.MVC_First_Demo.Model.User;
+import com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,7 +15,6 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.util.ArrayList;
 import java.util.List;
 
