@@ -70,7 +70,8 @@ JDBC_MySQL:
 <br>
 
 MVC_Demo:
-<a href="user">User</a>
+<a href="user">User</a> |
+<a href="product-menu">Product Menu</a>
 
 <hr/>
 <br>
