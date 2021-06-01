@@ -19,6 +19,7 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String urlContinue = request.getParameter("urlContinue");
 
         User user = UserService.check(request, username, password);
 
@@ -26,11 +27,11 @@ public class Login extends HttpServlet {
             request.getSession().setAttribute("isLoggedIn", true);
             request.getSession().setAttribute("user", user);
 
-            response.sendRedirect(request.getContextPath() + "/task");
+            response.sendRedirect(request.getContextPath() + "/" + urlContinue);
         } else {
             request.getSession().setAttribute("errorMessage", "Invalid Username/Password.");
 
-            response.sendRedirect(request.getContextPath() + "/login");
+            response.sendRedirect(request.getContextPath() + "/login/?urlContinue=" + urlContinue);
         }
     }
 }

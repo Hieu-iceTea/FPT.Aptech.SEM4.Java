@@ -23,7 +23,7 @@
 <jsp:include page="/components/errorMessage.jsp"/>
 <jsp:include page="/components/notification.jsp"/>
 
-<form action="login" method="post">
+<form action="login?urlContinue=${param.urlContinue}" method="post">
     <label for="username">Username:</label><br>
     <input type="text" id="username" name="username"><br>
     <label for="password">Password:</label><br>

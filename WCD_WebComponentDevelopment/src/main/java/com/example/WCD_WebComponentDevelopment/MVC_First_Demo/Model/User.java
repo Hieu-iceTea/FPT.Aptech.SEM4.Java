@@ -141,16 +141,13 @@ public class User extends BaseModel {
     }
 
     public static List<User> all() {
-        List<?> result = Utility.executeQuery("select * from user", User.class.getName());
-        if (result.size() == 0) {
-            return null;
-        }
+        List<?> result = Utility.executeQuery("SELECT * FROM user ORDER BY id DESC", User.class.getName());
 
         return (List<User>) result;
     }
 
     public static User find(int id) {
-        List<?> result = Utility.executeQuery("select * from user where id = " + id, User.class.getName());
+        List<?> result = Utility.executeQuery("SELECT * FROM user WHERE id = " + id, User.class.getName());
         if (result.size() == 0) {
             return null;
         }

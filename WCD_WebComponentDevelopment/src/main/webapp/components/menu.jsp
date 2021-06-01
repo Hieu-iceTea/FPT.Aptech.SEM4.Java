@@ -67,6 +67,10 @@ JDBC_MySQL:
 <a href="JDBC_MySQL/test-servlet">test-servlet</a> |
 <a href="JDBC_MySQL/test-servlet-use-model">test-servlet-use-model</a> |
 <a href="JDBC_MySQL/test-servlet-use-model-use-utility">test-servlet-use-model-use-utility</a>
+<br>
+
+MVC_Demo:
+<a href="user">User</a>
 
 <hr/>
 <br>

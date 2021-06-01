@@ -37,7 +37,13 @@ public class AuthenticationFilter implements Filter {
             String uri = httpRequest.getRequestURI();
             if (uri.contains("task")) {
                 httpRequest.getSession().setAttribute("errorMessage", "Please login to access this action");
-                httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
+                httpResponse.sendRedirect(httpRequest.getContextPath() + "/login?urlContinue=task");
+                return;
+            }
+
+            if (uri.contains("user")) {
+                httpRequest.getSession().setAttribute("errorMessage", "Please login to access this action");
+                httpResponse.sendRedirect(httpRequest.getContextPath() + "/login?urlContinue=user");
                 return;
             }
         }
