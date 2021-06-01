@@ -1,6 +1,6 @@
 package com.example.WCD_WebComponentDevelopment.MVC_Demo.Model;
 
-import MyUtilities.Utility;
+import MyUtilities.DatabaseUtility;
 
 import java.util.List;
 
@@ -97,13 +97,13 @@ public class Product extends BaseModel {
     }
 
     public static List<Product> all() {
-        List<?> result = Utility.executeQuery("SELECT * FROM product ORDER BY id DESC", Product.class.getName());
+        List<?> result = DatabaseUtility.executeQuery("SELECT * FROM product ORDER BY id DESC", Product.class.getName());
 
         return (List<Product>) result;
     }
 
     public static Product find(int id) {
-        List<?> result = Utility.executeQuery("SELECT * FROM product WHERE id = " + id, Product.class.getName());
+        List<?> result = DatabaseUtility.executeQuery("SELECT * FROM product WHERE id = " + id, Product.class.getName());
         if (result.size() == 0) {
             return null;
         }

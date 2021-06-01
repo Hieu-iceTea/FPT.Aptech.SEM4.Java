@@ -16,8 +16,8 @@ public class TestServlet_UseModel_UseUtility extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //List<User> users = (List<User>) (List<?>) Utility.executeQuery("select * from user", User.class.getName());
-        //List<User> users = (List<User>) Utility.executeQuery("select * from user", User.class.getName());
+        //List<User> users = (List<User>) (List<?>) DatabaseUtility.executeQuery("select * from user", User.class.getName());
+        //List<User> users = (List<User>) DatabaseUtility.executeQuery("select * from user", User.class.getName());
         List<User> users = User.all();
 
         response.setContentType("text/plain");
