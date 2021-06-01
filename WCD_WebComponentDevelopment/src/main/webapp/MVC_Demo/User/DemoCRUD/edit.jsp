@@ -23,7 +23,7 @@
 
 <div id="container">
     <p>
-        <a href="user/demo-crud">Back to List</a>
+        <a href="user/demo-crud">< Back to List</a>
     </p>
     <h3>Update User</h3>
 
@@ -175,7 +175,7 @@
     <div style="clear: both;"></div>
 
     <p>
-        <a href="user/demo-crud">Back to List</a>
+        <a href="user/demo-crud">< Back to List</a>
     </p>
 
 </div>
