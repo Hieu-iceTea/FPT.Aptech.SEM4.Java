@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Hieu_iceTea
+  Date: 01/06/2021
+  Time: 09:50
+  To change this template use File | Settings | File Templates.
+--%>
+
 <%@ page import="com.example.WCD_WebComponentDevelopment.MVC_Demo.Model.User" %>
 <%@ page import="java.util.List" %>
 
@@ -59,7 +67,7 @@
                 <td>${ product.ingredients }</td>
                 <td>${ product.price }</td>
                 <td>
-                    <a href="product-menu/#show/?id=${ product.id }">Detail</a> |
+                    <a href="product-menu/show/?id=${ product.id }">Detail</a> |
                     <a href="product-menu/#edit/?id=${ product.id }">Edit</a> |
                     <a href="product-menu/#delete/?id=${ product.id }" onclick="return confirm('Are you sure delete this item?')">Delete</a>
                 </td>
