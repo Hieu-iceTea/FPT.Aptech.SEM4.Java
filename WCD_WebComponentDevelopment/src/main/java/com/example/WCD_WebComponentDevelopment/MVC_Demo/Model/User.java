@@ -11,12 +11,12 @@ public class User extends BaseModel {
     private String Firstname;
     private String Lastname;
 
-    private Boolean Gender;
+    private int Gender;
     private String Email;
     private String Phone;
     private String Address;
 
-    private String Level;
+    private int Level;
     private String Image;
 
     private Boolean Active;
@@ -77,11 +77,11 @@ public class User extends BaseModel {
         Lastname = lastname;
     }
 
-    public Boolean getGender() {
+    public int getGender() {
         return Gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(int gender) {
         Gender = gender;
     }
 
@@ -109,11 +109,11 @@ public class User extends BaseModel {
         Address = address;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return Level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         Level = level;
     }
 

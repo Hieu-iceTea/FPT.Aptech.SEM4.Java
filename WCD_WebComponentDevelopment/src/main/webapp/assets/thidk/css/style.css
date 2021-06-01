@@ -1,0 +1,70 @@
+html, body {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-bottom: 1px solid gray;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+th {
+    border-bottom: 1px solid gray;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+tr {
+    border-top: 1px solid gray;
+    text-align: center;
+}
+
+#wrapper {
+    width: 100%;
+    margin-top: 0px;
+}
+
+#header {
+    text-align: center;
+    background-color: #1fc8db; /* For browsers that do not support gradients */
+    background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+    margin-top: 0px;
+    padding: 15px 0px 15px 0px;
+}
+
+#header h2 {
+    width: 100%;
+    margin: auto;
+    color: #FFFFFF;
+}
+
+#container {
+    width: 100%;
+    margin: auto
+}
+
+#container h3 {
+    color: #000;
+}
+
+#container #content {
+    margin-top: 20px;
+}
+
+.add-button {
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 120px;
+    padding: 5px 10px;
+
+    margin-bottom: 15px;
+    background-color: #1fc8db; /* For browsers that do not support gradients */
+    color: #FFFFFF;
+}
