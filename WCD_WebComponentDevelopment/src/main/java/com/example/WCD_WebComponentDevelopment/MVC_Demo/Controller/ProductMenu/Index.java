@@ -14,7 +14,14 @@ import java.util.List;
 public class Index extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> products = Product.all();
+        String keyword = request.getParameter("search");
+
+        List<Product> products;
+        if (keyword != null) {
+            products = Product.search(keyword);
+        } else {
+            products = Product.all();
+        }
 
         request.setAttribute("products", products);
 

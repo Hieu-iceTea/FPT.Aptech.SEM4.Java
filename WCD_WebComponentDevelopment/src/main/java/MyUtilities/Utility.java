@@ -47,4 +47,13 @@ public class Utility {
         }
         return capitalizeWord.trim();
     }
+
+    public static int[] stringToIntArray(String stringArray[]) {
+        int size = stringArray.length;
+        int[] intArray = new int[size];
+        for (int i = 0; i < size; i++) {
+            intArray[i] = Integer.parseInt(stringArray[i]);
+        }
+        return intArray;
+    }
 }

@@ -13,13 +13,21 @@ import java.util.List;
 
 public class DatabaseUtility {
     /**
-     * Hieu_iceTea
+     * <b>
+     *     Tự động ánh xạ danh sách bản ghi từ database thành thực thể model
+     * </b>
      *
-     * @param query
-     * @param className
-     * @return
+     * <br><br>
+     * Created by: Nguyễn Đình Hiếu. <br>
+     * User: Hieu_iceTea <br>
+     * Date: 02/06/2021 <br>
+     * Time: 11:55 <br>
+     *
+     * @param query Câu truy vấn Select. <br><br>
+     * @param className Tên model cần mapping. <br> Ví dụ: nếu model là <b>Product</b>, truyền vào className sẽ là <b>Product.class.getName()</b> <br><br>
+     * @return List<?> Danh sách bản ghi đã ánh xạ đến model
      */
-    public static List<?> executeQuery(String query, String className) {
+    public static List<?> executeQuery_AutoMappingToModel(String query, String className) {
         try {
             Context initialContext = new InitialContext();
             Context environmentContext = (Context) initialContext.lookup("java:comp/env");

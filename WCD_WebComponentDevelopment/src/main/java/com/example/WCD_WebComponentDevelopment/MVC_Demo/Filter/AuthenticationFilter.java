@@ -35,7 +35,7 @@ public class AuthenticationFilter implements Filter {
             }
 
             String uri = httpRequest.getRequestURI();
-            if (uri.contains("task") || uri.contains("user")) {
+            if (uri.contains("task") || uri.contains("user")|| uri.contains("product-menu")) {
                 httpRequest.getSession().setAttribute("errorMessage", "Please login to access this action");
                 httpResponse.sendRedirect(httpRequest.getContextPath() + "/login?urlContinue=" + action.substring(1));
                 return;
