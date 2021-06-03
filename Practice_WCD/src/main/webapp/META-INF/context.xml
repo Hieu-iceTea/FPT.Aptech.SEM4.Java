@@ -1,0 +1,23 @@
+<Context>
+
+    <!-- maxTotal(int): số lượng kết nối tối đa tại 1 thời điểm. -->
+    <!-- maxIdle(int): số lượng kết nối nhàn rỗi được duy trì tối đa. -->
+    <!-- maxWaitMillis: số mili giây tối đa đợi kết nối, sau số giây này thì coi như ko kết nối được, để hệ thống chuyển sang việc khác. -->
+
+    <!-- CHÚ Ý: Sửa lại username, password và tên cơ sở dữ liệu trong url cho đúng -->
+
+    <Resource name="jdbc/mysql/WCD_WebComponentDevelopment_Practice"
+              auth="Container"
+              type="javax.sql.DataSource"
+
+              maxTotal="100"
+              maxIdle="30"
+              maxWaitMillis="10000"
+
+              username="root"
+              password=""
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/WCD_WebComponentDevelopment_Practice"/>
+
+</Context>
+
