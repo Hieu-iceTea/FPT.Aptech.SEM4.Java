@@ -121,6 +121,27 @@ CREATE TABLE IF NOT EXISTS `restaurant`
     PRIMARY KEY (`id`)
 ) ENGINE InnoDB;
 
+# Create Table restaurant
+DROP TABLE IF EXISTS `english_vocabulary`;
+CREATE TABLE IF NOT EXISTS `english_vocabulary`
+(
+    `id`         INT AUTO_INCREMENT,
+
+    `word`       VARCHAR(64),
+    `phonetic`   VARCHAR(64),
+    `mean`       VARCHAR(64),
+    `status`     BOOLEAN NOT NULL DEFAULT FALSE,
+
+    `created_by` NVARCHAR(32) DEFAULT 'Hieu_iceTea',
+    `created_at` TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+    `updated_by` NVARCHAR(32) DEFAULT NULL,
+    `updated_at` TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+    `version`    INT          DEFAULT 1,
+    `deleted`    BOOLEAN      DEFAULT FALSE,
+
+    PRIMARY KEY (`id`)
+) ENGINE InnoDB;
+
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                             Insert Data                                             #
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
@@ -340,3 +361,9 @@ INSERT INTO restaurant (id, name, image, address, description)
 VALUE (8, 'The Handpulled Noodle', 'TheHandpulledNoodle.PNG', '196 Spring St Soho, New York City, USA', 'The Sichuan dishes here look very nice with delicious taste. Diners coming here not only can enjoy the food but also watch the artists performing the painting on the zither in the evening. Sitting on a luxury restaurant, diners eat and drink while watching the skyline.');
 INSERT INTO restaurant (id, name, image, address, description)
 VALUE (9, 'Xian Famous Foods', 'xianfood.png', '778 Wall Street, New York, NY, USA', 'In fact, Xian Famous Foods has many similarities with Sichuan, but the flavor is different because of its sour taste, many salt grains and the dish often has a small bacon added. When visiting a famous high-class restaurant, visitors should enjoy the restaurant famous dishes such as fish head cooked with crushed eggplant, sauteed pork.');
+
+
+INSERT INTO english_vocabulary (id, word, phonetic, mean, status)
+VALUE (1, 'Restaurant', 'UK: /ˈres.trɒnt/ | US: /ˈres.tə.rɑːnt/', 'Nhà hàng', TRUE);
+INSERT INTO english_vocabulary (id, word, phonetic, mean, status)
+VALUE (2, 'Company', 'UK: /ˈkʌm.pə.ni/ | US: /ˈkʌm.pə.ni/', 'Công ty', FALSE);

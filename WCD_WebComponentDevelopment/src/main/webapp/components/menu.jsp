@@ -76,6 +76,10 @@ MVC_Demo:
 
 Assignment:
 <a href="product-menu">Product Menu</a>
+<br>
+
+Assignment:
+<a href="english-vocabulary">English Vocabulary</a>
 
 <hr/>
 <br>
