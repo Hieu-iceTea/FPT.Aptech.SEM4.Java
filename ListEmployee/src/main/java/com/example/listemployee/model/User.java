@@ -1,13 +1,9 @@
 package com.example.listemployee.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class User extends BaseModel {
-    @Id
-    private int Id;
-
     private String Username;
     private String Password;
 

@@ -1,8 +1,12 @@
 package com.example.listemployee.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@MappedSuperclass
 public class BaseModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
 
     private Date CreatedAt;
@@ -10,6 +14,7 @@ public class BaseModel {
     private Date UpdatedAt;
     private String UpdatedBy;
 
+    @Version
     private int Version;
     private Boolean Deleted;
 
