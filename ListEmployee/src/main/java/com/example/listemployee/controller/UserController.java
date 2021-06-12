@@ -3,8 +3,8 @@ package com.example.listemployee.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
+import com.example.listemployee.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,22 +18,39 @@ import com.example.listemployee.model.User;
 @SpringBootApplication
 @RequestMapping("user")
 public class UserController {
-    private List<User> users;
+    @Autowired
+    private UserRepository userRepository;
+
+    /*private List<User> _users;
 
     @PostConstruct
     private void loadData() {
-        users = new ArrayList<>();
+        _users = new ArrayList<>();
 
-        users.add(new User(1, "Nguyen Dinh", "Hieu", "DinhHieu8896@gmail.com"));
-        users.add(new User(2, "Nguyen Van", "Tu", "NguyenVanTu@gmail.com"));
-        users.add(new User(3, "Vo Thi", "Na", "VoThiNa@gmail.com"));
-    }
+        _users.add(new User(1, "Nguyen Dinh", "Hieu", "DinhHieu8896@gmail.com"));
+        _users.add(new User(2, "Nguyen Van", "Tu", "NguyenVanTu@gmail.com"));
+        _users.add(new User(3, "Vo Thi", "Na", "VoThiNa@gmail.com"));
+    }*/
 
     @GetMapping("/list")
     public String index(Model model) {
+        List<User> users = (List<User>) userRepository.findAll();
+
         model.addAttribute("users", users);
 
         return "list-employee";
     }
 
+    @GetMapping("/detail/{id}")
+    public String detail(Model model, @PathVariable int id) {
+        /*List<User> user = new ArrayList<>();
+        user.add(new User(1, "Nguyen Dinh", "Hieu", "DinhHieu8896@gmail.com"));
+        model.addAttribute("users", user);*/
+
+        List<User> users = new ArrayList<>();
+        users.add(userRepository.findById(id).orElse(null));
+        model.addAttribute("users", users);
+
+        return "list-employee";
+    }
 }
