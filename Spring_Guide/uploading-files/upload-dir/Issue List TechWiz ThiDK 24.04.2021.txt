@@ -1,0 +1,56 @@
+1. Trang chủ 
+
+Tìm tất cả thông tin về Evanto rồi bỏ đi 
+footer, contact ... 
+đây chính là cty đã là ra template này 
+
+- phần Check our promo video!
+Thay đổi video giới thiệu về Evanto bằng video khác về đồ ăn ẩm thực (book đồ ăn online càng tốt)
+- Thay đổi nội dung: Copyright Soup 2020©. Made with love by Suelo.
+- Thay đổi phần Lastnew: Contents và Links 
+
+ - Thay đổi Special offers
+thành Restaurant : list vài nhà hàng nổi bật trong hệ thống
+
+- Link Pick a dish bị lỗi (sau phải check lại toàn bộ link bị lỗi)
+- Nội dung phần Vivamus volutpat leo dictum risus ullamcorper condimentum. cần thay đổi 
+
+2. Test Data cần phải chuẩn 
+Hiện tại dữ liệu chưa chuẩn 
+đồ ăn chay lại có pizza
+burger cũng có pizza 
+... dữ liệu cần chuẩn chỉnh 
+dữ liệu sai thì sẽ bị trừ điểm rất nặng... vì rõ ràng website đang ko phân loại đúng 
+hoặc đang phân loại đúng theo database thì thực tế dữ liệu không đúng 
+do cẩu thả ... 
+TÚM LẠI DỮ LIỆU PHẢI CHUẨN 
+
+3. Tham khảo dữ liệu thật ở trang 
+https://www.doordash.com/
+pizza https://www.doordash.com/pizza-near-me/
+chinese https://www.doordash.com/chinese-near-me/
+sushi https://www.doordash.com/sushi-near-me/
+cafe https://www.doordash.com/cafe-near-me/
+mexican https://www.doordash.com/mexican-near-me/
+thai https://www.doordash.com/thai-near-me/
+lunch https://www.doordash.com/lunch-near-me/
+seafood https://www.doordash.com/seafood-near-me/
+
+https://www.ubereats.com/
+https://www.ubereats.com/category/las-vegas-nv/dim-sum
+https://www.ubereats.com/category/las-vegas-nv/breakfast-and-brunch
+https://www.ubereats.com/las-vegas/food-delivery/ra-sushi-3200-las-vegas-blvd-south-suite-1132/NznUp_s6Qb2tVGyGirdXlA
+
+
+Bảng user 
+thêm role admin 
+admin: chỉ tạo danh sách nhà hàng, và tài khoản cho nhân viên thuộc nhà hàng đó, thêm category sản phẩm
+staff: update, add, delete món cho nhà hàng đó. 
+staff: duyệt đơn đặt hàng cho nhà hàng đó 
+
+==> phần admin hiện tại cần tách ra làm 2 phần theo yêu cầu trên 
+
+MENU Admin: user, category, restaurant 
+MENU Staff: Order, Product, 
+
+
