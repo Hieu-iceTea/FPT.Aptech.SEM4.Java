@@ -17,12 +17,12 @@ public class UserController {
     /*@Autowired
     private UserRepository userRepository;*/
 
-    //@Autowired
+    @Autowired //Dùng từ khóa @Autowired ở đây để không phải thêm hàm khởi tạo (Constructor) cho cơ chế DI: Dependency Injection
     private UserService userService;
 
-    public UserController(UserService userService) {
+    /*public UserController(UserService userService) {
         this.userService = userService;
-    }
+    }*/
 
     @GetMapping(path = {"", "/", "/index"})
     public String index(Model model) {

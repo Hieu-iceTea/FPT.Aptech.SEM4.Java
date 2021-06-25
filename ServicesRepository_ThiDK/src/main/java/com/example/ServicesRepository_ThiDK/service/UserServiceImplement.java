@@ -11,12 +11,13 @@ import java.util.Optional;
 @Service
 public class UserServiceImplement implements UserService {
 
+    @Autowired //Dùng từ khóa @Autowired ở đây để không phải thêm hàm khởi tạo (Constructor) cho cơ chế DI: Dependency Injection
     private UserRepository userRepository;
 
-    @Autowired
+    /*@Autowired
     public UserServiceImplement(UserRepository userRepository) {
         this.userRepository = userRepository;
-    }
+    }*/
 
     @Override
     public List<User> findAll() {
@@ -39,7 +40,7 @@ public class UserServiceImplement implements UserService {
 
         User user;
 
-        if (userOptional.isPresent()){
+        if (userOptional.isPresent()) {
             user = userOptional.get();
         } else {
             throw new RuntimeException("Did not find item id - " + id);
