@@ -6,44 +6,52 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+
+//@Table(name = "user")
 public class User {
+
+    // define fields
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
-    private String FullName;
-    private int Age;
-    private int Salary;
+    //@Column(name = "full_name")
+    private String fullName;
+    private int age;
+    private int salary;
 
+    //region - Getter, Setter -
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getFullName() {
-        return FullName;
+        return fullName;
     }
 
     public void setFullName(String fullName) {
-        FullName = fullName;
+        this.fullName = fullName;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
     }
 
     public int getSalary() {
-        return Salary;
+        return salary;
     }
 
     public void setSalary(int salary) {
-        Salary = salary;
+        this.salary = salary;
     }
+    //endregion
 }

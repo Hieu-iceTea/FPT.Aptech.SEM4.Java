@@ -1,7 +1,9 @@
 package com.example.ServicesRepository_ThiDK.controller;
 
+
 import com.example.ServicesRepository_ThiDK.dao.UserRepository;
 import com.example.ServicesRepository_ThiDK.entity.User;
+import com.example.ServicesRepository_ThiDK.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,13 +14,24 @@ import java.util.List;
 @Controller
 @RequestMapping(path = "/user")
 public class UserController {
-    @Autowired
-    private UserRepository userRepository;
+    /*@Autowired
+    private UserRepository userRepository;*/
+
+    //@Autowired
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping(path = {"", "/", "/index"})
     public String index(Model model) {
-        List<User> users = (List<User>) userRepository.findAll();
+        // get users from database
+        //List<User> users = (List<User>) userRepository.findAll();
+        //List<User> users = userService.findAll();
+        List<User> users = userService.findAllByOrderByIdDesc();
 
+        // add to the spring model
         model.addAttribute("users", users);
 
         return "user/index";
@@ -35,14 +48,16 @@ public class UserController {
     @PostMapping(path = "/create")
     public String store(@ModelAttribute User user) {
 
-        userRepository.save(user);
+        //userRepository.save(user);
+        userService.save(user);
 
         return "redirect:/user/index";
     }
 
     @GetMapping(path = "/edit/{id}")
     public String edit(Model model, @PathVariable int id) {
-        User user = userRepository.findById(id).orElse(null);
+        //User user = userRepository.findById(id).orElse(null);
+        User user = userService.findById(id);
 
         model.addAttribute("user", user);
 
@@ -52,7 +67,8 @@ public class UserController {
     @PostMapping(path = "/edit")
     public String update(@ModelAttribute User user) {
 
-        userRepository.save(user);
+        //userRepository.save(user);
+        userService.save(user);
 
         return "redirect:/user/index";
     }
@@ -60,7 +76,8 @@ public class UserController {
     @GetMapping(path = "/delete/{id}")
     public String delete(@PathVariable int id) {
 
-        userRepository.deleteById(id);
+        //userRepository.deleteById(id);
+        userService.deleteById(id);
 
         return "redirect:/user/index";
     }
