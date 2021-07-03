@@ -63,15 +63,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+
+                .antMatchers("/admin").hasRole("ADMIN")
+                .antMatchers("/user").hasAnyRole("ADMIN", "USER")
+
                 .antMatchers("/", "/home").permitAll()
                 .anyRequest().authenticated()
-                .and()
 
+                .and()
                 .formLogin()
                 //.loginPage("/login") //Bỏ dòng này sẽ dùng trang login mặc định
                 .permitAll()
-                .and()
 
+                .and()
                 .logout()
                 .permitAll();
     }
