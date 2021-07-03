@@ -52,10 +52,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         ;
     }
 
-    @Bean
+    /*@Bean
     public PasswordEncoder getPasswordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
+        return NoOpPasswordEncoder.getInstance(); //Tắt mã hóa mật khẩu, mật khẩu sẽ được lưu trực tiếp vào DB
+    }*/
     //endregion
 
     //region - Configure -
