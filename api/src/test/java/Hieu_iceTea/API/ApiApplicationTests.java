@@ -1,4 +1,4 @@
-package com.example.api;
+package Hieu_iceTea.API;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
