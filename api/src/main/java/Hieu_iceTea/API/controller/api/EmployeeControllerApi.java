@@ -13,7 +13,6 @@ import java.util.List;
 @RequestMapping(path = "/api/employees")
 public class EmployeeControllerApi {
 
-    //TODO: Sửa lỗi vòng lặp đệ quy khi xử lý JSON, lý do relationship giữa các bảng.
     //Video hướng dẫn của cô ThiDK: http://youtube.com/watch?v=pMxgLOPe_OE
 
     //region - Autowired Service -
