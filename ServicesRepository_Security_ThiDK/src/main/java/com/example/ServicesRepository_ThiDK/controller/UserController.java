@@ -1,9 +1,9 @@
 package com.example.ServicesRepository_ThiDK.controller;
 
 
-import com.example.ServicesRepository_ThiDK.dao.UserRepository;
 import com.example.ServicesRepository_ThiDK.entity.User;
 import com.example.ServicesRepository_ThiDK.service.UserService;
+import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,6 +66,10 @@ public class UserController {
 
     @PostMapping(path = "/edit")
     public String update(@ModelAttribute User user) {
+
+        User myUser = userService.findById(1);
+
+
 
         //userRepository.save(user);
         userService.save(user);
