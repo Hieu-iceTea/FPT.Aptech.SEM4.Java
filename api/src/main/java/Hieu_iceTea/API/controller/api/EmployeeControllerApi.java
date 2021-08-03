@@ -29,7 +29,7 @@ public class EmployeeControllerApi {
 
     }
 
-    @GetMapping(path = {"/{id}/", "/{id}"})
+    @GetMapping(path = {"/{id}", "/{id}/"})
     public Employee show(@PathVariable int id) {
 
         return employeeService.findById(id);
@@ -39,7 +39,7 @@ public class EmployeeControllerApi {
 
 
     //region - Create -
-    @PostMapping(path = {"/create/", "/create"})
+    @PostMapping(path = {"", "/"})
     public Employee store(@ModelAttribute Employee user) {
 
         Employee newEmployee = employeeService.save(user);
@@ -51,7 +51,7 @@ public class EmployeeControllerApi {
 
 
     //region - Edit -
-    @PostMapping(path = {"/{id}/edit/", "/{id}/edit"})
+    @PostMapping(path = {"/{id}", "/{id}/"})
     public Employee update(@ModelAttribute Employee employee) {
 
         employeeService.save(employee);
@@ -63,7 +63,7 @@ public class EmployeeControllerApi {
 
 
     //region - Delete -
-    @DeleteMapping(path = {"/{id}/", "/{id}"})
+    @DeleteMapping(path = {"/{id}", "/{id}/"})
     public List<Employee> delete(@PathVariable int id) {
 
         // 02. Xóa bản ghi database
