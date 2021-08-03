@@ -2,6 +2,7 @@ package Hieu_iceTea.API.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -64,13 +65,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
 
-                .antMatchers("/admin/**").hasAnyRole("HOST", "ADMIN", "STAFF")
-                .antMatchers("/account/profile/**").hasRole("CUSTOMER")
-                .antMatchers("/account/my-order/**").hasRole("CUSTOMER")
+                // API:
+                .antMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Employee")
+                .antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("Manager", "Admin")
+                .antMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("Manager", "Admin")
+                .antMatchers(HttpMethod.DELETE, "/api/**").hasAnyRole("Admin")
 
-                //.antMatchers("/rest-api/**").hasAnyRole("HOST") //chỉ HOST mới call API
-                .antMatchers("/rest-api/**").hasAnyRole("ADMIN") //Theo đề bài, chỉ ADMIN mới call API thôi, ahihi
-                .antMatchers("/repository-api/**").hasAnyRole("ADMIN") //Theo đề bài, chỉ ADMIN mới call API thôi, ahihi
 
                 //.antMatchers("/").permitAll()
                 .anyRequest().authenticated()
