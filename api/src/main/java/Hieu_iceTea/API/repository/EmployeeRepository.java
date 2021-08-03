@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface EmployeeRepository extends BaseRepository<Employee, Integer> {
 
-    List<Employee> findAllByNameContainsOrderByIdDesc(String name);
+    List<Employee> findAllByFirstNameContainsOrderByIdDesc(String firstName);
 
 }

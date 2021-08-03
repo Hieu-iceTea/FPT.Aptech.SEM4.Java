@@ -30,7 +30,7 @@ public class EmployeeServiceImplement extends BaseServiceImplement<Employee, Int
         if (KeywordSearch == null) {
             products = employeeRepository.findAllByOrderByIdDesc();
         } else {
-            products = employeeRepository.findAllByNameContainsOrderByIdDesc(KeywordSearch);
+            products = employeeRepository.findAllByFirstNameContainsOrderByIdDesc(KeywordSearch);
         }
 
         return products;

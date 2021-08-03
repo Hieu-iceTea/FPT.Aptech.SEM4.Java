@@ -85,17 +85,18 @@ CREATE TABLE IF NOT EXISTS `authorities`
 DROP TABLE IF EXISTS `employees`;
 CREATE TABLE IF NOT EXISTS `employees`
 (
-    `id`                  INT AUTO_INCREMENT,
+    `id`         INT AUTO_INCREMENT,
 
-    `name`                VARCHAR(64),
-    `wage`                DECIMAL(16, 2) DEFAULT 0     NOT NULL,
+    `first_name` VARCHAR(64),
+    `last_name`  VARCHAR(64),
+    `email`      VARCHAR(128),
 
-    `created_by`          NVARCHAR(32)   DEFAULT 'Hieu_iceTea',
-    `created_at`          TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
-    `updated_by`          NVARCHAR(32)   DEFAULT NULL,
-    `updated_at`          TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
-    `version`             INT            DEFAULT 1,
-    `deleted`             BOOLEAN        DEFAULT FALSE,
+    `created_by` NVARCHAR(32) DEFAULT 'Hieu_iceTea',
+    `created_at` TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+    `updated_by` NVARCHAR(32) DEFAULT NULL,
+    `updated_at` TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+    `version`    INT          DEFAULT 1,
+    `deleted`    BOOLEAN      DEFAULT FALSE,
 
     PRIMARY KEY (`id`)
 ) ENGINE InnoDB;
@@ -110,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `employees`
 INSERT INTO users (id, restaurant_id, username, email, password, email_verified_at, image, gender, name, phone, address, enabled)
 VALUES
 (13, NULL, 'Hieu_iceTea', 'DinhHieu8896@gmail.com', '{bcrypt}$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', '1996-08-08', 'Hieu_iceTea.jpg', 1, 'Nguyễn Đình Hiếu', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE),
-(12, NULL, 'ThiDK', 'ThiDK@fpt.edu.vn ', '{bcrypt}$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', '2021-08-08', 'ThiDK.jpg', 2, 'Đặng Kim Thi', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE),
+(12, NULL, 'ThiDK', 'ThiDK@fpt.edu.vn', '{bcrypt}$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', '2021-08-08', 'ThiDK.jpg', 2, 'Đặng Kim Thi', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE),
 (11, NULL, 'DinhHieu8896', 'HieuNDTH1908028@fpt.edu.vn', '{bcrypt}$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', '2021-08-08', 'DinhHieu8896.jpg', 1, 'Nguyễn Đình Hiếu', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE),
 (10, NULL, 'HungNPMTH1908050', 'HungNPMTH1908050@fpt.edu.vn', '{bcrypt}$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', '2021-08-08', 'HungNPMTH1908050.jpg', 1, 'Nông Phan Mạnh Hùng', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE),
 (9, NULL, 'HuyVQTH1909003', 'HuyVQTH1909003@fpt.edu.vn', '{bcrypt}$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', '2021-08-08', 'HuyVQTH1909003.jpg', 1, 'Vũ Quang Huy', '0868 6633 15', '8, Ton That Thuyet, Ha Noi, Viet Nam', TRUE),
@@ -141,18 +142,18 @@ VALUES
 ('Hieu_iceTea', 'ROLE_CUSTOMER');
 
 
-INSERT INTO employees (id, name, wage)
+INSERT INTO employees (id, first_name, last_name, email)
 VALUES
-(13, 'Nguyễn Đình Hiếu', 12000),
-(12, 'Đặng Kim Thi', 12000),
-(11, 'Nguyễn Đình Hiếu', 12000),
-(10, 'Nông Phan Mạnh Hùng', 12000),
-(9, 'Vũ Quang Huy', 12000),
-(8, 'Nguyễn Trung Anh', 12000),
-(7, 'CODEDY Customer', 12000),
-(6, 'CODEDY Staff C', 12000),
-(5, 'CODEDY Staff B', 12000),
-(4, 'CODEDY Staff A', 12000),
-(3, 'CODEDY Admin ReadOnly', 12000),
-(2, 'CODEDY Admin', 12000),
-(1, 'CODEDY Host', 12000);
+(13, 'Nguyễn Đình', 'Hiếu', 'DinhHieu8896@gmail.com'),
+(12, 'Đặng Kim', 'Thi', 'ThiDK@fpt.edu.vn'),
+(11, 'Nguyễn Đình', 'Hiếu', 'HieuNDTH1908028@fpt.edu.vn'),
+(10, 'Nông Phan Mạnh', 'Hùng', 'HungNPMTH1908050@fpt.edu.vn'),
+(9, 'Vũ Quang', 'Huy', 'HuyVQTH1909003@fpt.edu.vn'),
+(8, 'Nguyễn Trung', 'Anh', 'AnhNTTH1908059@fpt.edu.vn'),
+(7, 'CODEDY', 'Customer', 'codedy.demo@gmail.com'),
+(6, 'CODEDY', 'Staff C', 'staff_c.codedy@gmail.com'),
+(5, 'CODEDY', 'Staff B', 'staff_b.codedy@gmail.com'),
+(4, 'CODEDY', 'Staff A', 'staff_a.codedy@gmail.com'),
+(3, 'CODEDY Admin', 'ReadOnly', 'admin_readOnly.codedy@gmail.com'),
+(2, 'CODEDY', 'Admin', 'admin.codedy@gmail.com'),
+(1, 'CODEDY', 'Host', 'host.codedy@gmail.com');
