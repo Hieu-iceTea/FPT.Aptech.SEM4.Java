@@ -59,7 +59,7 @@ public class EmployeeControllerApi {
 
 
     //region - Edit -
-    @PostMapping(path = {"/{id}", "/{id}/"})
+    @PutMapping(path = {"/{id}", "/{id}/"})
     public Employee update(@RequestBody Employee employee) {
 
         return employeeService.save(employee);
