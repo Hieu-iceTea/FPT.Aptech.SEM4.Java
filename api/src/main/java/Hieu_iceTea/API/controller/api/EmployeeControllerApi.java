@@ -1,6 +1,7 @@
 package Hieu_iceTea.API.controller.api;
 
 
+import Hieu_iceTea.API.controller.api.exception.EmployeeNotFoundException;
 import Hieu_iceTea.API.model.Employee;
 import Hieu_iceTea.API.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 public class EmployeeControllerApi {
 
     //Video hướng dẫn của cô ThiDK: http://youtube.com/watch?v=pMxgLOPe_OE
+    //Video hướng dẫn của cô ThiDK - video 2: https://www.youtube.com/watch?v=nimev8Djyd8
 
     //region - Autowired Service -
     @Autowired
@@ -32,7 +34,13 @@ public class EmployeeControllerApi {
     @GetMapping(path = {"/{id}", "/{id}/"})
     public Employee show(@PathVariable int id) {
 
-        return employeeService.findById(id);
+        Employee employee = employeeService.findById(id);
+
+        if (employee == null) {
+            throw new EmployeeNotFoundException("Employee id not found - " + id);
+        }
+
+        return employee;
 
     }
     //endregion
@@ -40,11 +48,11 @@ public class EmployeeControllerApi {
 
     //region - Create -
     @PostMapping(path = {"", "/"})
-    public Employee store(@ModelAttribute Employee user) {
+    public Employee store(@RequestBody Employee employee) {
 
-        Employee newEmployee = employeeService.save(user);
+        employee.setId(0);
 
-        return employeeService.findById(newEmployee.getId());
+        return employeeService.save(employee);
 
     }
     //endregion
@@ -52,11 +60,9 @@ public class EmployeeControllerApi {
 
     //region - Edit -
     @PostMapping(path = {"/{id}", "/{id}/"})
-    public Employee update(@ModelAttribute Employee employee) {
+    public Employee update(@RequestBody Employee employee) {
 
-        employeeService.save(employee);
-
-        return employeeService.findById(employee.getId());
+        return employeeService.save(employee);
 
     }
     //endregion
@@ -64,12 +70,16 @@ public class EmployeeControllerApi {
 
     //region - Delete -
     @DeleteMapping(path = {"/{id}", "/{id}/"})
-    public List<Employee> delete(@PathVariable int id) {
+    public String delete(@PathVariable int id) {
+
+        if (employeeService.findById(id) == null) {
+            throw new EmployeeNotFoundException("Employee id not found - " + id);
+        }
 
         // 02. Xóa bản ghi database
         employeeService.deleteById(id);
 
-        return employeeService.findAll();
+        return "Deleted employee id - " + id;
 
     }
     //endregion

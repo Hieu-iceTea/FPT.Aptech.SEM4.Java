@@ -1,11 +1,14 @@
 package Hieu_iceTea.API.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "employees")
+@JsonIgnoreProperties({"hibernateLazyInitial", "handler"})
 public class Employee extends BaseModel implements Serializable {
 
     //region - Define Fields -

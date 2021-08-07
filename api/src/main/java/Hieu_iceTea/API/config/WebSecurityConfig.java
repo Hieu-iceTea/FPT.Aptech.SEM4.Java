@@ -22,42 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
-                .dataSource(dataSource)
-        //.withDefaultSchema()
-                /*.withUser(
-                        User.withUsername("user")
-                                .password("123456")
-                                .roles("USER")
-                )
-                .withUser(
-                        User.withUsername("admin")
-                                .password("123456")
-                                .roles("ADMIN")
-                )
-                .withUser(
-                        User.withUsername("Hieu_iceTea")
-                                .password("123456")
-                                .roles("USER", "ADMIN")
-                )
-                .withUser(
-                        User.withUsername("Hieu_IT")
-                                .password("123456")
-                                .roles("USER", "ADMIN")
-                )*/
-        ;
-
-        //inMemoryAuthentication
-        /*auth.inMemoryAuthentication()
-                .withUser("customer").password("{noop}1996").roles("CUSTOMER")
-                .and()
-                .withUser("admin").password("{noop}1996").roles("ADMIN");*/
+                .dataSource(dataSource);
     }
-
-    /*@Bean
-    public PasswordEncoder getPasswordEncoder() {
-        return NoOpPasswordEncoder.getInstance(); //Tắt mã hóa mật khẩu, mật khẩu sẽ được lưu trực tiếp vào DB
-    }*/
-    //endregion
 
     //region - Authorization | Configure -
     @Override
@@ -71,6 +37,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("Manager", "Admin")
                 .antMatchers(HttpMethod.DELETE, "/api/**").hasAnyRole("Admin")
 
+                /*.antMatchers(HttpMethod.GET, "/api/customers").hasAnyRole("Employee")
+                .antMatchers(HttpMethod.GET, "/api/customers/**").hasAnyRole("Employee")
+                .antMatchers(HttpMethod.POST, "/api/customers").hasAnyRole("Manager", "Admin")
+                .antMatchers(HttpMethod.POST, "/api/customers/**").hasAnyRole("Manager", "Admin")
+                .antMatchers(HttpMethod.PUT, "/api/customers").hasAnyRole("Manager", "Admin")
+                .antMatchers(HttpMethod.PUT, "/api/customers/**").hasAnyRole("Manager", "Admin")
+                .antMatchers(HttpMethod.DELETE, "/api/customers/**").hasAnyRole("Admin")*/
 
                 //.antMatchers("/").permitAll()
                 .anyRequest().authenticated()
@@ -81,13 +54,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.loginPage("/account/login") //Bỏ dòng này sẽ dùng trang login mặc định
                 .permitAll()
 
-                .and()
-                .logout()
-                .permitAll()
-
-                .and()
-                .exceptionHandling()
-                .accessDeniedPage("/account/access-denied")
 
                 //Thêm 2 dòng này nếu dùng API (Đăng nhập kiểu Basic-Auth trong Postman)
                 .and()
@@ -101,18 +67,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     //endregion
 
-    //region - In-Memory Authentication -
-    /*@Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("Hieu_iceTea")
-                        .password("123456")
-                        .roles("USER")
-                        .build();
-
-        return new InMemoryUserDetailsManager(user);
-    }*/
-    //endregion
 }

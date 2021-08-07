@@ -3,6 +3,7 @@ package Hieu_iceTea.API.service.base;
 
 import Hieu_iceTea.API.model.BaseModel;
 import Hieu_iceTea.API.repository.BaseRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,16 +19,19 @@ public class BaseServiceImplement<T extends BaseModel, ID extends Serializable> 
     }
 
     @Override
+    @Transactional
     public List<T> findAll() {
         return repository.findAll();
     }
 
     @Override
+    @Transactional
     public List<T> findAllByOrderByIdDesc() {
         return repository.findAllByOrderByIdDesc();
     }
 
     @Override
+    @Transactional
     public T findById(ID id) {
         Optional<T> itemOptional = repository.findById(id);
 
@@ -43,16 +47,19 @@ public class BaseServiceImplement<T extends BaseModel, ID extends Serializable> 
     }
 
     @Override
+    @Transactional
     public T save(T item) {
         return repository.save(item);
     }
 
     @Override
+    @Transactional
     public List<T> saveAll(List<T> items) {
         return (List<T>) repository.saveAll(items);
     }
 
     @Override
+    @Transactional
     public void deleteById(ID id) {
         repository.deleteById(id);
     }
