@@ -1,4 +1,4 @@
-package controller;
+package com.example.hibernate_advanced_mappings.controller;
 
 
 import org.springframework.stereotype.Controller;
